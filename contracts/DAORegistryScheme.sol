@@ -8,10 +8,10 @@ import "./DAORegistry.sol";
 
 /**
  * @title A universal scheme for managing a registry of named addresses
- * @dev The RegistryScheme has a registry of addresses for each DAO.
+ * @dev The DAORegistryScheme has a registry of addresses for each DAO.
  *      A DAO can add and remove names/address mappings inside its registry by voting
  */
-contract RegistryScheme is UniversalScheme, VotingMachineCallbacks, ProposalExecuteInterface {
+contract DAORegistryScheme is UniversalScheme, VotingMachineCallbacks, ProposalExecuteInterface {
 
     event ProposeToRegister (
         address indexed _administrator,

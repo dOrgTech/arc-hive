@@ -2,7 +2,7 @@ import * as helpers from "./helpers";
 const constants = require("./constants");
 const ERC20Mock = artifacts.require("ERC20Mock");
 
-const RegistryScheme = artifacts.require("RegistryScheme");
+const DAORegistryScheme = artifacts.require("DAORegistryScheme");
 const DAORegistry = artifacts.require("DAORegistry");
 
 const DaoCreator = artifacts.require("DaoCreator");
@@ -37,7 +37,7 @@ const setup = async accounts => {
     gas: constants.ARC_GAS_LIMIT
   });
   const standardTokenMock = await ERC20Mock.new(accounts[1], 100);
-  const registryScheme = await RegistryScheme.new();
+  const registryScheme = await DAORegistryScheme.new();
   const reputationArray = [20, 40, 70];
   const org = await helpers.setupOrganizationWithArrays(
     daoCreator,
