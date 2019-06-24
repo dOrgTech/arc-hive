@@ -33,7 +33,7 @@ contract DAORegistryScheme is UniversalScheme, VotingMachineCallbacks, ProposalE
         bytes _executionCall
     );
 
-    // A mapping that mapes each administrator to a mapping of proposalsIds to
+    // A mapping that maps each administrator to a mapping of proposalsIds to
     // the proposal execution call (ABI encoding)
     mapping(address=>mapping(bytes32=>bytes)) public proposals;
 
