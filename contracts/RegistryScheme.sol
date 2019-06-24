@@ -96,9 +96,9 @@ contract RegistryScheme is UniversalScheme, VotingMachineCallbacks, ProposalExec
         bytes32 _voteParams,
         IntVoteInterface _intVote,
         INameRegistry _registry
-    ) public pure returns(bytes32)
+    ) public pure returns(bytes32 paramsHash)
     {
-        return keccak256(abi.encodePacked(_voteParams, _intVote, address(_registry)));
+        paramsHash = keccak256(abi.encodePacked(_voteParams, _intVote, address(_registry)));
     }
 
     /**
